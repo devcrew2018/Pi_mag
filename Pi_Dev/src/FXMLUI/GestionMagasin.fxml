@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLUI.GestionMagasinController">
+   <children>
+      <HBox fx:id="parent_hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="100.0" style="-fx-background-color: #1c1a1b;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #272726;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="115.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../img/123456%5D.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="100.0">
+                     <children>
+                        <Hyperlink fx:id="Stats_hyperlink" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" onAction="#open_Stats" prefHeight="166.0" prefWidth="84.0" text="Stats" textFill="#df8f1c">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="15.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="58.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/pie-chart.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+                  <FontAwesomeIcon fill="#43433f" iconName="LOCK" size="3em" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets top="460.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+                  <JFXButton fx:id="logout_but_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="80.0" ripplerFill="#33728d" style="-fx-background-color: #272726;" text="LOGOUT" textFill="#df8f1c" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <VBox prefHeight="522.0" prefWidth="500.0" style="-fx-background-color: #272726;" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #1c1a1b;">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <FontAwesomeIcon glyphStyle="-fx-fill:#999" iconName="SEARCH" size="1.5em" />
+                        <JFXTextField focusColor="#eec451" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" promptText="Search by Name" unFocusColor="#999999">
+                           <font>
+                              <Font name="Candara" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="STORE">
+                                 <font>
+                                    <Font name="Verdana" size="31.0" />
+                                 </font>
+                                 <textFill>
+                                    <RadialGradient centerX="0.5722222222222222" centerY="0.3238095238095238" radius="0.5">
+                                       <stops>
+                                          <Stop color="#976810" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="273.0" prefWidth="500.0">
+                     <children>
+                        <TableView fx:id="table_prod" prefHeight="273.0" prefWidth="700.0" style="-fx-background-color: #272726; -fx-border-color: #df8f1c; -fx-border-width: 2px;" stylesheets="@../Res/dark-theme.css">
+                          <columns>
+                            <TableColumn fx:id="name_prod" editable="false" prefWidth="127.0" style="-fx-font-color: #df8f1c;" text="Name" />
+                              <TableColumn fx:id="Price" prefWidth="108.0" text="Price" />
+                              <TableColumn fx:id="fabdate_prod" editable="false" prefWidth="156.0" text="Fabrication&#10;date" />
+                              <TableColumn fx:id="expdate_prod" editable="false" prefWidth="170.0" text="Expiration&#10;date" />
+                              <TableColumn fx:id="quantity_prod" editable="false" prefWidth="156.0" text="Quantity" />
+                              <TableColumn fx:id="amount_prod" editable="false" prefWidth="158.0" text="Amount" />
+                              <TableColumn fx:id="cathegory_prod" editable="false" minWidth="-Infinity" prefWidth="116.0" text="Cathegory" />
+                              <TableColumn fx:id="StoreID" prefWidth="104.0" text="Store" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem fx:id="deleteproducts" mnemonicParsing="false" onAction="#deleteproducts" text="Delete" />
+                                    <MenuItem fx:id="Editproduct" mnemonicParsing="false" onAction="#Editproduct" text="Edit" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="input_exp_date" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="1100.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Separator prefWidth="200.0">
+                           <effect>
+                              <Shadow color="#df8f1c" height="20.42" radius="7.57" width="11.86" />
+                           </effect>
+                        </Separator>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="169.0" text="Add New Product">
+                           <VBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="0.261904761904762" endY="1.0" startX="0.9" startY="0.5095238095238095">
+                                 <stops>
+                                    <Stop color="#976810" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="Prod_id" text="Prod ID:" textFill="#ffd92e" underline="true" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <JFXTextField fx:id="input_name_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Name" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="40.0" top="40.0" />
+                           </VBox.margin>
+                           <unFocusColor>
+                              <RadialGradient centerX="0.29444444444444445" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#4d4d4d8c" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </unFocusColor>
+                           <focusColor>
+                              <LinearGradient endX="1.0" endY="1.0" startY="0.2666666666666667">
+                                 <stops>
+                                    <Stop color="#0745ff" />
+                                    <Stop color="#4059a9" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </focusColor>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXDatePicker fx:id="input_fab_date_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Fabrication Date" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="750.0" top="-30.0" />
+                           </VBox.margin>
+                           <defaultColor>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#3a539e" />
+                                    <Stop color="#3a539d" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </defaultColor>
+                        </JFXDatePicker>
+                        <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="250.0" prefWidth="442.0">
+                           <VBox.margin>
+                              <Insets left="320.0" top="-20.0" />
+                           </VBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <effect>
+                              <Shadow color="#df8f1c" height="29.16" radius="9.817499999999999" width="12.11">
+                                 <input>
+                                    <DropShadow />
+                                 </input>
+                              </Shadow>
+                           </effect>
+                        </Separator>
+                        <JFXTextField fx:id="input_quantity_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Quantity" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="40.0" top="-200.0" />
+                           </VBox.margin>
+                           <unFocusColor>
+                              <RadialGradient centerX="0.2833333333333333" centerY="0.43333333333333335" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#4d4d4d8c" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </unFocusColor>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <focusColor>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#3a539e" />
+                                    <Stop color="#4059a9" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </focusColor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="input_amount_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Amount" unFocusColor="#df8f1c" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="40.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <focusColor>
+                              <LinearGradient endX="1.0" endY="1.0" startX="0.014285714285714285">
+                                 <stops>
+                                    <Stop color="#3a539e" />
+                                    <Stop color="#df8f1c" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </focusColor>
+                        </JFXTextField>
+                        <JFXDatePicker fx:id="input_exp_date_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Expiration Date" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="750.0" top="-90.0" />
+                           </VBox.margin>
+                           <defaultColor>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#3a539e" />
+                                    <Stop color="#3a539d" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </defaultColor>
+                        </JFXDatePicker>
+                        <JFXComboBox fx:id="combo_cathegory_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="175.0" promptText="Cathegory" unFocusColor="#de8d1d">
+                           <VBox.margin>
+                              <Insets left="750.0" top="30.0" />
+                           </VBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="combo_Store_prod" layoutX="760.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="175.0" promptText="Store" unFocusColor="#de8d1d">
+                           <VBox.margin>
+                              <Insets left="750.0" top="30.0" />
+                           </VBox.margin>
+                        </JFXComboBox>
+                        <JFXTextField fx:id="input_Price_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" promptText="Price" unFocusColor="#df8f1c">
+                           <focusColor>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#3a539e" />
+                                    <Stop color="#4d4d4d" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </focusColor>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="40.0" top="-20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <HBox fx:id="input_amout_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="708.0">
+                           <children>
+                              <JFXTextField />
+                              <JFXButton fx:id="reset_but_prod" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #1c1a1b;" text="Reset" textFill="#df8f1c" HBox.hgrow="NEVER">
+                                 <HBox.margin>
+                                    <Insets left="370.0" top="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="save_but_prod" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #1c1a1b;" text="Save" textFill="#df8f1c" HBox.hgrow="NEVER">
+                                 <HBox.margin>
+                                    <Insets left="35.0" top="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

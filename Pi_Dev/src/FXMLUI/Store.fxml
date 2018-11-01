@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLUI.StoreController">
+   <children>
+      <HBox fx:id="parent_hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="100.0" style="-fx-background-color: #1c1a1b;">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #272726;">
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="115.0" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../img/123456%5D.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="100.0">
+                     <children>
+                        <Separator prefWidth="200.0">
+                           <effect>
+                              <Lighting bumpInput="$null">
+                                 <light>
+                                    <Light.Distant color="#df8f1c" />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <Hyperlink fx:id="showcart_map" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#GotoCart" prefHeight="160.0" prefWidth="100.0" text="Cart" textFill="#df8f1c">
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                 <image>
+                                    <Image url="@../img/cart.png" />
+                                 </image></ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Hyperlink>
+                        <Separator prefWidth="200.0">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow height="0.0" radius="0.0" width="0.0" />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant color="#df8f1c" />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Separator>
+                        <FontAwesomeIcon fill="#43433f" iconName="LOCK" size="3em" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="40.0" top="450.0" />
+                           </VBox.margin>
+                        </FontAwesomeIcon>
+                        <JFXButton fx:id="logout_but_prod" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="80.0" ripplerFill="#33728d" style="-fx-background-color: #272726;" text="LOGOUT" textFill="#df8f1c" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="800.0" prefWidth="1119.0" style="-fx-background-color: #272726;" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #1c1a1b;">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1089.0" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="STORE">
+                                 <font>
+                                    <Font name="Verdana" size="31.0" />
+                                 </font>
+                                 <textFill>
+                                    <RadialGradient centerX="0.5722222222222222" centerY="0.3238095238095238" radius="0.5">
+                                       <stops>
+                                          <Stop color="#976810" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="vbox_tree" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="1100.0">
+                     <children>
+                        <Label prefHeight="48.0" prefWidth="294.0" text="Welcome to the store" textFill="#df8f1c">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TreeView fx:id="TreeView" prefHeight="357.0" prefWidth="1100.0" style="-fx-background-color: #272726;" stylesheets="@../Res/dark-theme.css">
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem fx:id="AddtoCart" mnemonicParsing="false" onAction="#AddtoCart" text="AddtoCart" />
+                                    <MenuItem fx:id="Feedback_menu" mnemonicParsing="false" onAction="#Feedback_menu" text="Rating and feedback" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin></TreeView>
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="1100.0">
+                     <children>
+                        <Rating fx:id="rating" visible="false">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Rating>
+                        <JFXTextArea fx:id="giant_area_feedback" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="722.0" promptText="Feel free to give us your feedback" visible="false">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </JFXTextArea>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="86.0">
+                           <VBox.margin>
+                              <Insets left="1010.0" top="-55.0" />
+                           </VBox.margin>
+                           <children>
+                              <Hyperlink fx:id="showmap_but" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ShowMap" prefHeight="116.0" prefWidth="82.0" text="Map" textFill="#df8f1c">
+                                 <graphic>
+                                    <ImageView fitHeight="62.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/map.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="Submit_rating" buttonType="RAISED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Submit_rating" prefHeight="44.0" prefWidth="126.0" style="-fx-background-color: #1c1a1b;" text="Submit" textFill="#df8f1c" visible="false">
+                           <VBox.margin>
+                              <Insets left="500.0" top="-50.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="name_var" text="Label" visible="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
